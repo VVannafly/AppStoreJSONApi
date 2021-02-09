@@ -15,6 +15,24 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
 
         collectionView.backgroundColor = .systemBackground
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: cellId)
+        fetchITunesApps()
+    }
+    
+    fileprivate var appResults = [Result]()
+    
+    fileprivate func fetchITunesApps() {
+        Service.shared.fetchApps { results, error  in
+            
+            if let err = error {
+                print("Failed to fetch apps:", err)
+                return
+            }
+            
+            self.appResults = results
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
         
     }
 
@@ -27,8 +45,14 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
         
+        let appResult = appResults[indexPath.item]
+        cell.nameLabel.text = appResult.trackName
+        cell.categoryLabel.text = appResult.primaryGenreName
+        if let rating = appResult.averageUserRating {
+        cell.ratingsLabel.text = String(format: "Rating: %0.2f", rating)
+        }
         return cell
     }
     
@@ -37,6 +61,6 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return appResults.count
     }
 }
