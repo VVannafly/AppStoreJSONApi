@@ -28,6 +28,7 @@
 		0A44117F25D5780500289C31 /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44117E25D5780500289C31 /* AppsPageHeader.swift */; };
 		0A44118225D5796900289C31 /* AppsHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44118125D5796900289C31 /* AppsHeaderHorizontalController.swift */; };
 		0A44118525D57B5C00289C31 /* AppHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44118425D57B5C00289C31 /* AppHeaderCell.swift */; };
+		0A44118925D5823E00289C31 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44118825D5823E00289C31 /* AppGroup.swift */; };
 		C94EC072D15BF660A5694D71 /* Pods_AppStoreJSONApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76B3EF7D20BACCE4196C47E /* Pods_AppStoreJSONApi.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		0A44117E25D5780500289C31 /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
 		0A44118125D5796900289C31 /* AppsHeaderHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalController.swift; sourceTree = "<group>"; };
 		0A44118425D57B5C00289C31 /* AppHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderCell.swift; sourceTree = "<group>"; };
+		0A44118825D5823E00289C31 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		7DE55CCB678DB5E6A051866B /* Pods-AppStoreJSONApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreJSONApi.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreJSONApi/Pods-AppStoreJSONApi.debug.xcconfig"; sourceTree = "<group>"; };
 		B76B3EF7D20BACCE4196C47E /* Pods_AppStoreJSONApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreJSONApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D99D7E4B99C8352FC77518 /* Pods-AppStoreJSONApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreJSONApi.release.xcconfig"; path = "Target Support Files/Pods-AppStoreJSONApi/Pods-AppStoreJSONApi.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				0A44115C25D30A8500289C31 /* SearchResult.swift */,
+				0A44118825D5823E00289C31 /* AppGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				0A44114525D2895300289C31 /* BaseTabBarController.swift in Sources */,
 				0A44116A25D52FB200289C31 /* AppsPageController.swift in Sources */,
 				0A44115D25D30A8500289C31 /* SearchResult.swift in Sources */,
+				0A44118925D5823E00289C31 /* AppGroup.swift in Sources */,
 				0A44113425D287BC00289C31 /* ViewController.swift in Sources */,
 				0A44113025D287BC00289C31 /* AppDelegate.swift in Sources */,
 				0A44114925D2B18000289C31 /* AppsSearchController.swift in Sources */,
