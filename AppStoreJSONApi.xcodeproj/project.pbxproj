@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2B9477260CE75300A8C2A9 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2B9476260CE75300A8C2A9 /* SocialApp.swift */; };
 		0A44113025D287BC00289C31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44112F25D287BC00289C31 /* AppDelegate.swift */; };
 		0A44113225D287BC00289C31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44113125D287BC00289C31 /* SceneDelegate.swift */; };
 		0A44113425D287BC00289C31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44113325D287BC00289C31 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2B9476260CE75300A8C2A9 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		0A44112C25D287BC00289C31 /* AppStoreJSONApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreJSONApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A44112F25D287BC00289C31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A44113125D287BC00289C31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				0A44115C25D30A8500289C31 /* SearchResult.swift */,
 				0A44118825D5823E00289C31 /* AppGroup.swift */,
+				0A2B9476260CE75300A8C2A9 /* SocialApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			files = (
 				0A44114525D2895300289C31 /* BaseTabBarController.swift in Sources */,
 				0A44116A25D52FB200289C31 /* AppsPageController.swift in Sources */,
+				0A2B9477260CE75300A8C2A9 /* SocialApp.swift in Sources */,
 				0A44115D25D30A8500289C31 /* SearchResult.swift in Sources */,
 				0A44118925D5823E00289C31 /* AppGroup.swift in Sources */,
 				0A44113425D287BC00289C31 /* ViewController.swift in Sources */,

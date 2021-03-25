@@ -31,6 +31,7 @@ class AppsSearchController: BaseListController {
         enterSearchTermLabel.fillSuperview(padding: .init(top: 100, left: 50, bottom: 0, right: 50))
         setupSearchBar()
         //        fetchITunesApps()
+        
     }
     
     fileprivate func fetchITunesApps() {

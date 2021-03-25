@@ -11,22 +11,31 @@ class AppsPageController: BaseListController {
     
     let cellId = "id"
     let headerId = "headerId"
-    
-    
+    var socialApps = [SocialApp]()
     var groups = [AppGroup]()
+    
+    let activityIndicator: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: .large)
+        aiv.color = .black
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        return aiv
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .clear
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        view.addSubview(activityIndicator)
+        activityIndicator.fillSuperview()
         
         fetchData()
     }
     
     fileprivate func fetchData() {
-        
         let dispatchGroup = DispatchGroup()
+        
         
         var group1: AppGroup?
         var group2: AppGroup?
@@ -50,8 +59,16 @@ class AppsPageController: BaseListController {
             group3 = appGroup
         }
         
+        dispatchGroup.enter()
+        Service.shared.fetchSocialApps { (apps, err) in
+            dispatchGroup.leave()
+            self.socialApps = apps ?? []
+            
+        }
+        
         dispatchGroup.notify(queue: .main) {
             print("completed your dispatch group tasks...")
+            self.activityIndicator.stopAnimating()
         if let group = group1 {
             self.groups.append(group)
         }
@@ -66,7 +83,9 @@ class AppsPageController: BaseListController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! AppsPageHeader
+        header.appHeaderHorizontalController.socials = self.socialApps
+        header.appHeaderHorizontalController.collectionView.reloadData()
         return header
     }
     
