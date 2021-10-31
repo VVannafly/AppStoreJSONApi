@@ -15,12 +15,20 @@ class AppsHorizontalController: HorizontalSnappingController {
     
     var appGroup: AppGroup?
     
+    var didSelectHandler: ((FeedResult) -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .clear
         collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
-        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let app = appGroup?.feed.results[indexPath.item] else {
+            return
+        }
+        didSelectHandler?(app)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

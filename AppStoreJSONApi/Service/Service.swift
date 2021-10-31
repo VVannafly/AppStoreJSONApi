@@ -17,14 +17,14 @@ class Service {
     }
     
     func fetchGames(completion: @escaping (AppGroup?, Error?) -> ()) {
-        let urlString =  "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-games-we-love/all/50/explicit.json"
+        let urlString =  "https://rss.applemarketingtools.com/api/v2/ru/apps/top-free/50/apps.json"
         
         fetchAppGroup(urlString: urlString, completion: completion)
 
     }
     
     func fetchTopGrossing(completion: @escaping (AppGroup?, Error?) -> ()) {
-        fetchAppGroup(urlString: "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-grossing/all/50/explicit.json", completion: completion)
+        fetchAppGroup(urlString: "https://rss.applemarketingtools.com/api/v2/ru/apps/top-paid/10/apps.json", completion: completion)
     }
     
     // helper

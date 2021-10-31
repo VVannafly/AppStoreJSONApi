@@ -102,7 +102,12 @@ class AppsPageController: BaseListController {
         let appGroup = groups[indexPath.item]
         cell.titleLabel.text = appGroup.feed.title
         cell.horizontalController.appGroup = appGroup
-        
+        cell.horizontalController.didSelectHandler = { [weak self] feedResult in
+            guard let self = self else { return }
+            let appPage = AppDetailController()
+            appPage.navigationItem.title = feedResult.name
+            self.navigationController?.pushViewController(appPage, animated: true)
+        }
         return cell
     }
 }
