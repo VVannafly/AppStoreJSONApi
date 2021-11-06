@@ -105,6 +105,7 @@ class AppsPageController: BaseListController {
         cell.horizontalController.didSelectHandler = { [weak self] feedResult in
             guard let self = self else { return }
             let appPage = AppDetailController()
+            appPage.appId = feedResult.id
             appPage.navigationItem.title = feedResult.name
             self.navigationController?.pushViewController(appPage, animated: true)
         }
